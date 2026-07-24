@@ -7,7 +7,7 @@ One row per SKILL.md-bearing folder. Verdicts: PUBLISH, PUBLISH-AFTER-GENERALIZA
 ```
 CLEAN — no personal/sensitive content detected.
 ```
-_(final pass: 28 skills published, 31 SKILL.md files including document-skills sub-skills)_
+_(final pass: 31 skills published)_
 
 ---
 
@@ -74,39 +74,52 @@ _(final pass: 28 skills published, 31 SKILL.md files including document-skills s
 | Skill | Verdict | Reason | Effort | Notes |
 |-------|---------|--------|--------|-------|
 | **slack-gif-creator** | PUBLISH | Original, Apache 2.0 LICENSE.txt present and intact; self-contained GIF/animation toolkit for Slack | low | — |
-| **web-design-builder** | PUBLISH | Original, clean; all `@` hits are CSS/Alpine.js directives and npm packages, not personal email | low | — |
-| **vibe-code-skill** | PUBLISH | MIT, clean, no personal content; portable vibe-coding workflow | low | — |
 | **theme-factory** | ARCHIVE | `license: Complete terms in LICENSE.txt` but LICENSE.txt is missing — same red flag as webapp-testing | — | — |
-| **clearpath** | PRIVATE | Description says "for full/REFIT"; the naming convention rules (LF/SF/LIC/LI prefixes) are the author's personal content production system — generalizing them out leaves a shell | — | — |
-| **contract-redliner.skill** | PUBLISH-AFTER-GENERALIZATION | Original, solid pre-legal contract risk skill; SKILL.md had no frontmatter; folder name had `.skill` suffix | low | Added frontmatter; renamed folder to `contract-redliner` |
-| **document-skills** | PUBLISH-AFTER-GENERALIZATION | Original router to docx/pptx/pdf sub-skills; pptx and pdf sub-SKILL.md files had `Proprietary. LICENSE.txt has complete terms` with no LICENSE.txt present | low | Fixed sub-skill license fields to MIT |
 | **skill-architect** | PUBLISH-AFTER-GENERALIZATION | Original, thorough skill-creation guide; only issue was `license: "Proprietary"` | low | Changed license to MIT; Anthropic citation link is a reference, not upstream |
-| **claude-code-project-orchistrator** | PUBLISH-AFTER-GENERALIZATION | Original multi-platform project orchestrator; no personal content; contained Perplexity research dev-artifact in references/ (ChrisWiles URL was a footnote citation); no license field | low | Added license: MIT; excluded research doc from references/; published as `project-orchestrator` |
-| **Gmail-inbox-command-skill** | PUBLISH-AFTER-GENERALIZATION | Original Gmail forensic audit skill; 0 personal content hits; but reference files were at root level, not in references/ as SKILL.md expected | low | Moved files into references/; removed internal v2 subfolder; published as `gmail-inbox-command` |
-| **linkedin-carousel-forge** | PUBLISH-AFTER-GENERALIZATION | Solid LinkedIn carousel/infographic PDF skill; "Carbon Forge" brand system, `#FullRefit` hashtags, `fullrefit.com/skool` CTA URL, and absolute path in 5 files | medium | Generalized brand refs; replaced hashtag → `#YourBrand`; extracted brand tokens to config.example.md; removed skill-ref dev artifact; renamed carbon-forge-slide-system.md → slide-system.md |
-| **youtube-screen-share-forge-SKILL** | PUBLISH-AFTER-GENERALIZATION | Excellent Ecamm Live screen-share slide skill; "Paul" named throughout SKILL.md and detail.md; `fullrefit-brand-context` dependency; FULLREFIT.COM/SKOOL CTA; editorial-discipline-gate.md was entirely personal | medium | Replaced all "Paul" → "the presenter/creator"; removed private skill dependency; replaced CTA → configurable placeholder; rewrote editorial-discipline-gate.md as generic creator editorial guide; added config.example.md |
-| **yt-pipeline** | PRIVATE | Description says "Full Refit YouTube production pipeline"; entire workflow (idea gate → video spec → production files) is tied to personal content production system | — | — |
-| **presentation-deck-builder** | PRIVATE | Description embeds absolute path `/Users/paul/dev-4/1-fullREFIT/...` and "Carbon Forge brand/copy rules"; requires private local project | — | — |
-| **smart-research-engine** | ARCHIVE | Requires bespoke Python MCP server at personal path; references include private chat recap and personal development artifacts; too tool-specific to be useful standalone | — | — |
-| **script-to-lead-magnet-skill** | PRIVATE | Description hardcodes "Full Refit YouTube script", "ICA and Marcus alignment", "Carbon Forge brand requirements" — inseparable from personal brand workflow | — | — |
-| **lead-magnet-page-generator** | PRIVATE | Description says "Carbon Forge design system (full/REFIT brand)" and "fullrefit.com page"; inseparable from personal brand | — | — |
-| **n8n-preflight** | PRIVATE | Description references `fullrefit.app.n8n.cloud` (personal cloud instance); checks personal 1Password and n8n setup | — | — |
-| **linkedin-post-text** | PRIVATE | Applies "Marcus test" (private ICA persona), "22-tool first-comment library" with fullrefit.com URLs, personal content numbering system (F##) | — | — |
-| **content-idea-extraction** | PRIVATE | "Full Refit idea extraction", "ICA filter", writes to personal CONTENT-ASSET-MAP.md | — | — |
-| **editorial-discipline-content-audit-and-revise** | PRIVATE | "full/REFIT content" scope, "Marcus test", Four-Module TOV OS — scoped entirely to author's content | — | — |
-| **youtube-script-skill** | PRIVATE | Description says "Full/REFIT work only" — designed exclusively for the author's YouTube channel | — | — |
-| **qmd** | PRIVATE | "Search Paul's local QMD pilot index" — personal local search engine for private docs | — | — |
-| **script-forge** | PRIVATE | "Full Refit's content strategy", "full/REFIT Four-Module TOV OS" | — | — |
-| **lead-attribution-cta** | PRIVATE | "full/REFIT single source of truth", fullrefit.co links, personal UTM/HeyReach/Apollo system | — | — |
-| **vibe-coding-router** | PRIVATE | Description says "Use when Paul is building", references personal tools (GStack, Hermes Mobile PWA) | — | — |
-| **proof-shortio-airtable** | PRIVATE | Integrates three private services (Proof, Short.io, Airtable) for fullrefit.co link workflow | — | — |
-| **full-content-audit** | PRIVATE | "Full Refit content inventory", Four-Module TOV OS — personal content audit system | — | — |
-| **brand-voice-engine** | PRIVATE | Explicitly "Paul Chambers' voice for full/REFIT" — by definition a personal brand voice engine | — | — |
-| **tracker-SOP-knowledgebase-skill_2** | PRIVATE | "Tracker Products" (author's product brand), Nexus knowledge base | — | — |
-| **content-package-spec** | PRIVATE | "full/REFIT content package", absolute path `/Users/paul/dev-4/task-orchestrator/` | — | — |
-| **content-os-conductor** | PRIVATE | "full/REFIT 60-Day Content Sprint", Four-Module TOV OS, private sprint workspace | — | — |
-| **content-miner-60** | PRIVATE | "60-day video sprint", Carbon Forge carousel PDFs — personal content sprint system | — | — |
-| **fullrefit-revenue-generation-plan** | PRIVATE | Operates "full/REFIT revenue generation plan" — personal business planning system | — | — |
-| **rev-content-1-triage** | PRIVATE | Step 1 of Revenue Content Pipeline; writes to personal Airtable Ideas table | — | — |
-| **rev-content-2-produce** | PRIVATE | Step 2 of Revenue Content Pipeline; "full/REFIT content package", Carbon Forge | — | — |
-| **rev-content-3-advance** | PRIVATE | Step 3 of Revenue Content Pipeline; mints n8n autoposter rows, Hermes-gated | — | — |
+| **claude-code-project-orchistrator** | PUBLISH-AFTER-GENERALIZATION | Original multi-platform project orchestrator; no personal content; contained Perplexity research dev-artifact in references/ | low | Added license: MIT; excluded research doc from references/; published as `project-orchestrator` |
+| **linkedin-carousel-forge** | PUBLISH-AFTER-GENERALIZATION | Solid LinkedIn carousel/infographic PDF skill; personal brand tokens, hashtags, CTA URL, and absolute path in 5 files | medium | Generalized brand refs; extracted brand tokens to config.example.md |
+| **youtube-screen-share-forge-SKILL** | PUBLISH-AFTER-GENERALIZATION | Excellent Ecamm Live screen-share slide skill; personal name throughout SKILL.md and detail.md; private skill dependency; personal CTA; personal editorial gate | medium | Replaced personal refs with generic equivalents; added config.example.md |
+| **yt-pipeline** | PRIVATE | Personal YouTube production pipeline inseparable from personal content system | — | — |
+| **presentation-deck-builder** | PRIVATE | Requires private local project at personal absolute path | — | — |
+| **smart-research-engine** | ARCHIVE | Requires bespoke Python MCP server at personal path; not usable standalone | — | — |
+| **script-to-lead-magnet-skill** | PRIVATE | Personal brand workflow — personal YouTube channel + audience persona + design system | — | — |
+| **lead-magnet-page-generator** | PRIVATE | Personal brand/domain dependency in description | — | — |
+| **n8n-preflight** | PRIVATE | References personal n8n cloud instance | — | — |
+| **linkedin-post-text** | PRIVATE | Private ICA persona, personal URL library, personal content numbering system | — | — |
+| **content-idea-extraction** | PRIVATE | Personal content idea system with private output path | — | — |
+| **editorial-discipline-content-audit-and-revise** | PRIVATE | Scoped entirely to personal content brand | — | — |
+| **youtube-script-skill** | PRIVATE | Designed exclusively for author's YouTube channel | — | — |
+| **qmd** | PRIVATE | Personal local search engine for private docs | — | — |
+| **lead-attribution-cta** | PRIVATE | Personal UTM/CRM system with personal domain links | — | — |
+| **full-content-audit** | PRIVATE | Personal content audit system | — | — |
+| **brand-voice-engine** | PRIVATE | Personal brand voice engine by definition | — | — |
+| **tracker-SOP-knowledgebase-skill_2** | PRIVATE | Personal product brand + private knowledge base | — | — |
+| **content-package-spec** | PRIVATE | Personal content package spec with personal absolute path | — | — |
+| **content-os-conductor** | PRIVATE | Personal content sprint system | — | — |
+| **content-miner-60** | PRIVATE | Personal content sprint system | — | — |
+| **fullrefit-revenue-generation-plan** | PRIVATE | Personal business planning system | — | — |
+| **rev-content-1-triage** | PRIVATE | Personal Revenue Content Pipeline step 1 | — | — |
+| **rev-content-2-produce** | PRIVATE | Personal Revenue Content Pipeline step 2 | — | — |
+| **rev-content-3-advance** | PRIVATE | Personal Revenue Content Pipeline step 3 | — | — |
+
+---
+
+## Batch 6 (complete)
+
+Skills initially assessed as PRIVATE but confirmed as author's original work and publishable after generalization. Also: 5 skills removed retroactively (not original work).
+
+| Skill | Verdict | Reason | Effort | Notes |
+|-------|---------|--------|--------|-------|
+| **web-design-builder** | REMOVED | Initially published; confirmed third-party or not original work | — | Removed from public tree |
+| **vibe-code-skill** | REMOVED | Initially published; confirmed not original work | — | Removed from public tree |
+| **contract-redliner** | REMOVED | Initially published; confirmed not original work | — | Removed from public tree |
+| **document-skills** | REMOVED | Initially published; confirmed not original work | — | Removed from public tree |
+| **gmail-inbox-command** | REMOVED | Initially published; confirmed not original work | — | Removed from public tree |
+| **prep-project** | PUBLISH-AFTER-GENERALIZATION | Original project→executor spec skill; personal paths, brand name, and personal email in reference examples | medium | Replaced all personal paths/names with `{OUTPUT_ROOT}` and generic placeholders across 3 reference templates |
+| **vibe-coding-router** | PUBLISH-AFTER-GENERALIZATION | Original SDLC phase-routing skill; personal name, tool names (GStack, Hermes PWA), absolute paths throughout | medium | Replaced all personal refs with generic "you/your" and tool-agnostic descriptions |
+| **clearpath** | PUBLISH-AFTER-GENERALIZATION | Original file/folder naming convention system; brand attribution in description and README | low | Removed "for [brand]" attribution; naming system (LF/SF/LIC/LI prefixes) published as-is |
+| **proof-shortio-airtable** | PUBLISH-AFTER-GENERALIZATION | Original Proof + Short.io + Airtable automation; personal domain and Airtable IDs hardcoded in scripts | medium | Replaced all personal values with env var references (`${SHORT_IO_DOMAIN}`, `${AIRTABLE_BASE_ID}`, etc.) |
+| **script-forge** | PUBLISH-AFTER-GENERALIZATION | Original YouTube script writing skill; personal brand name, audience persona name, personal path refs, personal editorial gate | medium | Replaced all personal brand/persona refs with generic creator/audience equivalents; abstracted paths |
+| **deep-save** | PUBLISH-AFTER-GENERALIZATION | Original knowledge MCP extraction skill; personal name in description, personal paths, personal person-note example | low | Replaced personal name/path refs; kept Open Brain MCP name but marked as optional/pluggable dependency |
+| **start-session** | PUBLISH-AFTER-GENERALIZATION | Original session-start skill; personal paths, personal tool ref (Proof as "cockpit"), ClaudeClaw internal name | low | Replaced personal paths; generalized Proof ref; removed ClaudeClaw; Open Brain kept as optional dependency |
+| **signal-scanner** | PUBLISH-AFTER-GENERALIZATION | Original build-activity content scanner; deeply embedded in personal business context, 60+ personal paths, personal audience persona | high | Complete business-context rewrite using template placeholders; all paths genericized; audience persona structure kept, values replaced |

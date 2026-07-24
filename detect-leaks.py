@@ -54,9 +54,15 @@ ALLOWLIST = [
     r'anthropic\.com',   # public
 ]
 
+SKIP_FILES = {
+    'detect-leaks.py',
+    'LICENSE',      # MIT copyright line legitimately names the author
+    'TRIAGE.md',    # Triage notes describe private skills by name for archival context
+}
+
 def should_skip(path):
     basename = os.path.basename(path)
-    return basename.startswith('.') or basename == 'detect-leaks.py'
+    return basename.startswith('.') or basename in SKIP_FILES
 
 def scan_file(filepath):
     hits = []
