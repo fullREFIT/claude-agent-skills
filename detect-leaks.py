@@ -98,6 +98,9 @@ if __name__ == '__main__':
         print(f"Usage: {sys.argv[0]} <dir>", file=sys.stderr)
         sys.exit(1)
     root = sys.argv[1]
+    if not os.path.isdir(root):
+        print(f"ERROR: {root!r} is not a directory — refusing to report a false CLEAN.", file=sys.stderr)
+        sys.exit(2)
     results = scan_dir(root)
     if not results:
         print("CLEAN — no personal/sensitive content detected.")
