@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#121010">
+<title>Build Path | full/REFIT</title>
+<meta name="description" content="A chain of four Claude skills that turns source material into executed work. Free. No account, no sign-up.">
+<link rel="canonical" href="https://skillquiver.dev/build-path">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#121010; --red:#D43B2A; --gold:#FFB400; --dark:#333130;
+  --ash:#F2F0EE; --white:#FFFFFF; --echo:#878E88; --soft:#E5E3E0;
+  --sans:'Outfit',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --max:1160px; --pad:clamp(20px,5vw,48px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ash);color:var(--carbon);line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:400}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--carbon);color:var(--white);padding:12px 18px;z-index:100}
+.skip:focus{left:12px;top:12px}
+.wm{font-size:1.05rem;letter-spacing:-0.01em;white-space:nowrap;font-weight:400}
+.wm b{font-weight:700;text-transform:uppercase;letter-spacing:0.1em}
+.wm span{color:var(--red)}
+.wm.on-dark{color:var(--white)}
+header{position:sticky;top:0;z-index:60;background:rgba(242,240,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--soft)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
+.hnav{display:flex;align-items:center;gap:26px}
+.hnav a{text-decoration:none;font-size:.85rem;font-weight:500;color:var(--dark);white-space:nowrap}
+.hnav a:hover{color:var(--red)}
+.hnav a.btn-s{background:var(--carbon);color:var(--white);padding:9px 18px;font-size:.8rem}
+.hnav a.btn-s:hover{background:var(--red)}
+.hnav a.active{color:var(--red)}
+@media(max-width:860px){.hnav a.hide-s{display:none}}
+@media(max-width:420px){.hnav a.btn-s{padding:9px 12px;font-size:.72rem}}
+.label{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--echo)}
+.label.red{color:var(--red)}
+.label.gold{color:var(--gold)}
+h1{font-size:clamp(2.2rem,5.6vw,3.9rem);line-height:1.08;font-weight:700;letter-spacing:-0.03em}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.18;font-weight:600;letter-spacing:-0.02em}
+h3{font-size:clamp(1.1rem,1.9vw,1.35rem);font-weight:600;letter-spacing:-0.01em;line-height:1.3}
+.lede{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--dark);max-width:58ch;line-height:1.65}
+section{padding:clamp(60px,8vw,104px) 0;border-top:1px solid var(--soft)}
+section.dark{background:var(--carbon);color:var(--ash);border-top:none}
+section.dark h2,section.dark h3{color:var(--white)}
+section.dark .lede{color:var(--soft)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:15px 28px;border:1px solid transparent;transition:.16s}
+.btn-p{background:var(--red);color:var(--white)}
+.btn-p:hover{background:var(--carbon)}
+.btn-g{border-color:var(--carbon);color:var(--carbon)}
+.btn-g:hover{background:var(--carbon);color:var(--white)}
+section.dark .btn-g{border-color:var(--echo);color:var(--white)}
+section.dark .btn-g:hover{background:var(--white);color:var(--carbon)}
+.hero{padding-top:clamp(52px,7vw,84px);border-top:none}
+.hero h1{margin:20px 0 20px;max-width:15ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 16px}
+.reassure{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--echo)}
+.pull{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--echo);max-width:50ch;margin-bottom:22px}
+.example{margin-top:32px;background:var(--white);border:1px solid var(--soft);border-left:3px solid var(--red);padding:22px 26px}
+.example p{font-size:.96rem;color:var(--dark);margin:0}
+.example b{color:var(--carbon)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;border:1px solid var(--soft);background:var(--white);padding:8px 14px;color:var(--dark)}
+
+/* ---- the chain ---- */
+.chain{margin-top:44px;max-width:760px}
+.node{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--red);padding:20px 24px}
+.node .nk{font-family:var(--mono);font-size:.95rem;font-weight:700;letter-spacing:-0.01em;color:var(--white);display:block;word-break:break-word}
+.node .nd{font-size:.93rem;color:var(--soft);margin-top:6px;max-width:56ch}
+.node.endpoint{background:transparent;border-left-color:var(--gold);border-style:dashed}
+.node.endpoint .nk{font-family:var(--sans);font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem}
+.node.endpoint .nd{color:var(--echo)}
+.link{display:flex;flex-direction:column;align-items:center;height:34px}
+.link i{display:block;width:2px;flex:1;background:linear-gradient(var(--red),rgba(212,59,42,.35))}
+.link::after{content:"";display:block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid var(--red);margin-top:-1px}
+.rule{margin-top:44px;border-left:3px solid var(--gold);background:rgba(255,180,0,.07);padding:22px 26px;max-width:760px}
+.rule p{font-size:.98rem;color:var(--soft);margin:0}
+.rule b{color:var(--white)}
+
+/* ---- skills ---- */
+.skills{margin-top:40px;border-top:1px solid var(--soft)}
+.sk{display:grid;grid-template-columns:210px 1fr;gap:clamp(16px,3vw,40px);padding:34px 0;border-bottom:1px solid var(--soft);align-items:start}
+@media(max-width:820px){.sk{grid-template-columns:1fr;gap:14px}}
+.sk-id{display:flex;align-items:baseline;gap:12px}
+.sk-id .sn{font-family:var(--mono);font-size:.72rem;color:var(--red);font-weight:700}
+.sk-name{font-family:var(--mono);font-size:1rem;font-weight:700;letter-spacing:-0.01em;color:var(--carbon);word-break:break-word}
+.sk p{color:var(--dark);font-size:.98rem;max-width:62ch}
+.sk ul{list-style:none;margin-top:18px;border-top:1px solid var(--soft)}
+.sk li{padding:14px 0 14px 20px;border-bottom:1px solid var(--soft);font-size:.94rem;color:var(--dark);position:relative;max-width:62ch}
+.sk li:last-child{border-bottom:none}
+.sk li::before{content:"";position:absolute;left:0;top:23px;width:7px;height:7px;background:var(--red)}
+.sk li b{color:var(--carbon)}
+.sk .checks{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--echo);margin-top:22px;display:block}
+
+/* ---- try it ---- */
+.cmds{margin-top:30px;border-top:1px solid rgba(255,255,255,.12)}
+.cmd{display:flex;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.cmd .cn{font-family:var(--mono);font-size:.7rem;color:var(--gold);flex-shrink:0}
+.cmd span.txt{font-size:.96rem;color:var(--soft);max-width:58ch}
+footer{background:var(--carbon);color:var(--echo);padding:32px 0;font-size:.8rem;border-top:1px solid rgba(255,255,255,.12)}
+.fbar{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.fnote{font-family:var(--mono);font-size:.72rem;color:var(--echo);margin-top:18px;line-height:1.8;word-break:break-word}
+.fnote b{color:var(--soft);font-weight:400}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="top">
+  <div class="wrap hbar">
+    <a href="#top" style="text-decoration:none"><span class="wm">full<span>/</span><b>REFIT</b></span></a>
+    <nav class="hnav">
+      <a href="#how" class="hide-s">How it works</a>
+      <a href="#chain" class="hide-s">The chain</a>
+      <a href="#try" class="hide-s">Try it</a>
+      <a href="https://fullrefit-execution-prompt-forge.vercel.app" class="btn-s">Try execution-prompt-forge &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="label red">Build Path</span>
+    <h1>Source material to executed work.</h1>
+    <p class="lede">A chain of four Claude skills. Each one turns raw material into something more useful than what came before it, and hands its result to the next.</p>
+    <div class="cta-row">
+      <a href="#chain" class="btn btn-p">See the chain</a>
+      <a href="#how" class="btn btn-g">What this solves</a>
+    </div>
+    <p class="reassure">No account. No sign-up. Free.</p>
+    <div class="chips">
+      <span class="chip">triage</span>
+      <span class="chip">transcript-superguide</span>
+      <span class="chip">project-instructions-forge</span>
+      <span class="chip">execution-prompt-forge</span>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="label">What this solves</span>
+    <h2 style="margin-top:14px;max-width:24ch">Most AI instructions fail in one of two ways.</h2>
+    <p class="lede" style="margin-top:20px">Either they're too vague and the agent guesses wrong, or they're too long and duplicate a plan that already exists somewhere else &mdash; creating two versions of the truth that quietly drift apart. Build Path is four skills that catch both failures at different points in the pipeline: turning a transcript into something verified, turning verified knowledge into standing instructions, and turning any situation into a request that's exactly as long as it needs to be.</p>
+  </div>
+</section>
+
+<section class="dark" id="chain">
+  <div class="wrap">
+    <span class="label gold">The chain</span>
+    <h2 style="margin-top:14px;max-width:22ch">Each skill does exactly one job.</h2>
+    <p class="lede" style="margin-top:16px">Six stages, start to finish. The output of each one is the input to the next.</p>
+
+    <div class="chain">
+      <div class="node endpoint">
+        <span class="nk">source material</span>
+        <p class="nd">a transcript, a doc, a recording</p>
+      </div>
+      <div class="link" aria-hidden="true"><i></i></div>
+      <div class="node">
+        <span class="nk">triage</span>
+        <p class="nd">decides whether this even needs routing, or can be finished right now</p>
+      </div>
+      <div class="link" aria-hidden="true"><i></i></div>
+      <div class="node">
+        <span class="nk">transcript-superguide</span>
+        <p class="nd">turns the source into verified knowledge: a guide, a checked resource list, and a record of what was actually confirmed</p>
+      </div>
+      <div class="link" aria-hidden="true"><i></i></div>
+      <div class="node">
+        <span class="nk">project-instructions-forge</span>
+        <p class="nd">turns that verified knowledge into a working Claude Project: steps with clear stopping points, not a summary of the topic</p>
+      </div>
+      <div class="link" aria-hidden="true"><i></i></div>
+      <div class="node">
+        <span class="nk">execution-prompt-forge</span>
+        <p class="nd">turns any single situation into a request sized correctly: sometimes one line, sometimes a full multi-step plan</p>
+      </div>
+      <div class="link" aria-hidden="true"><i></i></div>
+      <div class="node endpoint">
+        <span class="nk">executed work</span>
+        <p class="nd">the finished job</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <p><b>The rule that keeps it from turning into a pile:</b> each skill does exactly one job, and hands a real, checked result to the next one. Nothing re-does work the step before it already finished.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <span class="label">In order</span>
+    <h2 style="margin-top:14px;max-width:20ch">The four skills.</h2>
+
+    <div class="skills">
+
+      <div class="sk">
+        <div class="sk-id"><span class="sn">01</span><span class="sk-name">triage</span></div>
+        <div>
+          <p>Looks at what you're asking for and figures out if it can just be done right now, or if it genuinely needs to be handed off somewhere else first. Most requests don't need a hand-off. This is the skill that decides.</p>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-id"><span class="sn">02</span><span class="sk-name">transcript-superguide</span></div>
+        <div>
+          <p>Takes a transcript &mdash; a video, a recording, a talk &mdash; and turns it into something better than watching the original: a written guide with the shaky claims checked against real sources, a resource list where every link and price has actually been verified, and an honest note about what the transcript doesn't tell you.</p>
+          <span class="checks">What it checks before trusting the source:</span>
+          <ul>
+            <li><b>Is the evidence actually finished?</b> If a video says "part one of four" and nothing has been proven yet, the guide says so plainly instead of writing it up like a settled method.</li>
+            <li><b>Is a sponsor's product being taught as if it were the only way to do this?</b> If so, the guide separates the method from the product, so you get the actual technique instead of an ad in disguise.</li>
+            <li><b>Does this touch something regulated</b> &mdash; money, contact information, health, hiring? If so, that gets its own clearly marked section instead of getting lost in the excitement of a cool idea.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-id"><span class="sn">03</span><span class="sk-name">project-instructions-forge</span></div>
+        <div>
+          <p>Takes a verified guide and turns it into instructions a Claude Project can actually run &mdash; not a summary of the topic, but a real workflow: numbered steps, a clear point where each step is genuinely finished, and rules for when something's gone wrong. Two quick tests keep it honest:</p>
+          <ul>
+            <li><b>Swap test:</b> if you could drop in a totally different subject and the steps would still make sense, they weren't specific enough. Start over.</li>
+            <li><b>Verb test:</b> every step should start with something a person actually does. A step that starts with a noun is a topic heading pretending to be an instruction.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-id"><span class="sn">04</span><span class="sk-name">execution-prompt-forge</span></div>
+        <div>
+          <p>Takes any single situation &mdash; a task, a request, a job &mdash; and writes it up in exactly the size it needs. If the plan already exists in a file somewhere, this writes one line pointing to it. If it's a brand-new, multi-step, high-stakes job, it writes the full thing, broken into checkpoints. It always starts at the smallest option and only goes bigger when there's a real, nameable reason &mdash; never just because the task feels important.</p>
+          <div class="example" style="margin-top:24px">
+            <p><b>See it running:</b> <a href="https://fullrefit-execution-prompt-forge.vercel.app" style="color:var(--red);font-weight:600">execution-prompt-forge has its own page &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="try">
+  <div class="wrap">
+    <span class="label gold">Get started</span>
+    <h2 style="margin-top:14px;max-width:20ch">Try it.</h2>
+    <div class="cmds">
+      <div class="cmd"><span class="cn">01</span><span class="txt">Download <code style="font-family:var(--mono)">execution-prompt-forge</code> and add it to your Claude tools folder.</span></div>
+      <div class="cmd"><span class="cn">02</span><span class="txt">Type a request the way you normally would.</span></div>
+      <div class="cmd"><span class="cn">03</span><span class="txt">It tells you how big a request it decided to write, and why &mdash; then hands you the finished version.</span></div>
+    </div>
+    <p class="reassure" style="margin-top:26px">No account. No sign-up. Free.</p>
+    <div class="cta-row" style="margin-bottom:0">
+      <a href="https://github.com/fullREFIT/claude-agent-skills" class="btn btn-p">Get the skills</a>
+      <a href="#top" class="btn btn-g">Back to top</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbar">
+      <span class="wm on-dark">full<span>/</span><b>REFIT</b> &middot; 2026</span>
+      <span>Systems built. Teams equipped.</span>
+    </div>
+    <p class="fnote"><b>Part of the Build Path collection.</b> Chain: triage &rarr; transcript-superguide &rarr; project-instructions-forge &rarr; execution-prompt-forge.<br>skillquiver.dev/build-path</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.hnav a[href^="#"]'));
+  var sections = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function sync(){
+    var y = window.scrollY + 120, current = -1;
+    sections.forEach(function(s, i){ if (s && s.offsetTop <= y) current = i; });
+    links.forEach(function(a, i){ a.classList.toggle('active', i === current); });
+  }
+  window.addEventListener('scroll', sync, { passive: true });
+  sync();
+})();
+</script>
+</body>
+</html>
