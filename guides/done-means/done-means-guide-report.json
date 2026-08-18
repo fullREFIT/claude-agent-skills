@@ -1,0 +1,289 @@
+{
+  "version": "1.0.0",
+  "slug": "done-means-guide",
+  "title": "Done Means: make completion checkable",
+  "subtitle": "An evidence-backed finish line for projects that need to ship",
+  "topic": "Project completion and verification",
+  "date": "2026-08-18",
+  "brand": {
+    "name": "full/REFIT",
+    "theme": "carbon-forge",
+    "wordmark": {
+      "fullText": "full/REFIT",
+      "slashColor": "#D43B2A",
+      "tagline": "Completion made visible."
+    }
+  },
+  "modeDefaults": {
+    "defaultMode": "presenter",
+    "showHelpHint": true,
+    "showProgressRail": true
+  },
+  "intro": {
+    "label": "OPERATING GUIDE",
+    "title": "A project is finished when an observer can prove it",
+    "subtitle": "Define the finish line, trace every task to it, and verify the result",
+    "summary": "Done Means is a disciplined audit and execution method for replacing vague status with independently checkable conditions. It keeps evidence, judgment, and action separate.",
+    "proofStats": [
+      { "label": "CORE STEPS", "value": "6" },
+      { "label": "FINDING TYPES", "value": "3" },
+      { "label": "LICENSE", "value": "MIT" }
+    ],
+    "tags": ["completion", "evidence", "execution"]
+  },
+  "methodology": {
+    "label": "METHOD",
+    "title": "Completion is a proof problem",
+    "body": [
+      "Read the live project before forming an opinion. Turn the finish line into conditions an independent observer can check.",
+      "Only observed failures, explicit absences, and required finish-line work become tasks. Every task carries evidence, a dependency, and a testable acceptance statement."
+    ]
+  },
+  "items": [
+    {
+      "id": "r-01",
+      "rankLabel": "01",
+      "itemClass": "ranked",
+      "category": "FINISH LINE / DEFINITION",
+      "layer": "systems",
+      "title": "Define DONE MEANS",
+      "headline": "Replace vague completion language with conditions an observer can check",
+      "thesis": "A finish line names the command, URL, route, file, behavior, or recorded result that must be true.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "Terms such as polished or production ready hide disagreement. A checkable condition exposes the actual gap and gives the next task a precise target.",
+      "takeaway": "Write three to six conditions before writing a backlog.",
+      "verdict": {
+        "state": "USE",
+        "fit": "Projects with ambiguous status or competing definitions of done",
+        "effort": "LOW",
+        "whyNow": "A precise finish line prevents activity from being mistaken for progress.",
+        "risks": ["Vague conditions create unbounded work."],
+        "nextStep": "Write the conditions in the project's own language."
+      },
+      "stats": [
+        { "label": "CONDITIONS", "value": "3-6", "emphasis": "red" },
+        { "label": "CHECKABLE", "value": "YES" }
+      ],
+      "highlights": [
+        { "title": "Name the proof", "body": "Use a command, route, URL, file, behavior, or recorded result." },
+        { "title": "Drop the fog", "body": "If an independent observer cannot check it, rewrite it." }
+      ],
+      "sources": [
+        { "label": "Agent Skills spec", "url": "https://agentskills.io/specification", "domain": "agentskills.io", "type": "docs" }
+      ],
+      "tags": ["finish-line", "conditions"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "mechanics", "type": "mechanics", "label": "MECHANICS", "title": "A good condition is observable", "body": "Use a statement such as `npm run build exits 0`, `GET /health returns 200`, or `a logged-out user reaches the dashboard`. Avoid `works correctly`.", "highlights": [{ "title": "Acceptance", "body": "The condition says what someone can inspect." }] },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Write the finish line first" }
+      ]
+    },
+    {
+      "id": "r-02",
+      "rankLabel": "02",
+      "itemClass": "ranked",
+      "category": "AUDIT / LIVE STATE",
+      "layer": "systems",
+      "title": "Read the project",
+      "headline": "Prior reports are claims until the live project confirms them",
+      "thesis": "Read instructions, manifests, configuration, source entry points, tests, and Git state before deciding what remains.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "A roadmap built from stale notes can send work in the wrong direction. The live tree is the source for current evidence, dependencies, and failures.",
+      "takeaway": "Declare what you read, sampled, and skipped.",
+      "verdict": {
+        "state": "USE",
+        "fit": "Any project with handoffs, parallel agents, or stale status notes",
+        "effort": "MEDIUM",
+        "whyNow": "The cheapest way to avoid a false backlog is to inspect first.",
+        "risks": ["Skipping source and tests creates stale tasks."],
+        "nextStep": "Run the project's own verification commands."
+      },
+      "stats": [
+        { "label": "SOURCE", "value": "LIVE TREE", "emphasis": "red" },
+        { "label": "REPORTS", "value": "CLAIMS" }
+      ],
+      "highlights": [
+        { "title": "Read in order", "body": "Docs, instructions, manifests, config, source, tests, Git." },
+        { "title": "Record coverage", "body": "State which directories were read, sampled, or skipped." }
+      ],
+      "sources": [
+        { "label": "Public skill", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }
+      ],
+      "tags": ["audit", "source-of-truth"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "proof", "type": "proof", "label": "PROOF", "title": "Run the commands that prove it", "body": "Use the project's documented build, typecheck, lint, test, or smoke-test commands. Capture actual output and errors instead of paraphrasing them.", "highlights": [{ "title": "No guessing", "body": "A passing document is not a passing system." }] },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Trust current evidence over old status" }
+      ]
+    },
+    {
+      "id": "r-03",
+      "rankLabel": "03",
+      "itemClass": "ranked",
+      "category": "FINDINGS / EVIDENCE",
+      "layer": "teams",
+      "title": "Classify the gap",
+      "headline": "Every task must be BROKEN, MISSING, or REQUIRED",
+      "thesis": "The three finding types prevent generic cleanup from entering a finish-line roadmap.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "A broken feature needs a failure citation. A missing surface needs a reference and absence. Required work needs a finish-line condition. The classification forces the evidence to stay specific.",
+      "takeaway": "If the evidence does not fit one source, do not add the task.",
+      "verdict": {
+        "state": "REPLICATE",
+        "fit": "Audits where backlog padding is a recurring failure",
+        "effort": "LOW",
+        "whyNow": "A narrow finding taxonomy keeps the roadmap short and defensible.",
+        "risks": ["Generic best practice becomes unbounded scope."],
+        "nextStep": "Attach one evidence citation to each finding."
+      },
+      "stats": [
+        { "label": "TYPES", "value": "3", "emphasis": "gold" },
+        { "label": "EVIDENCE", "value": "REQUIRED" }
+      ],
+      "highlights": [
+        { "title": "BROKEN", "body": "Something exists and you observed it fail." },
+        { "title": "MISSING", "body": "Something is referenced but absent." },
+        { "title": "REQUIRED", "body": "The finish line needs work with no implementation reference." }
+      ],
+      "sources": [
+        { "label": "Public skill", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }
+      ],
+      "tags": ["broken", "missing", "required"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "mechanics", "type": "mechanics", "label": "MECHANICS", "title": "Evidence is a locator", "body": "Cite a path and line, a command and error, or an explicit absence. A sentence that merely repeats the finding is not evidence.", "highlights": [{ "title": "Specificity", "body": "The citation should let another person recheck the claim." }] },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Drop unsupported cleanup" }
+      ]
+    },
+    {
+      "id": "r-04",
+      "rankLabel": "04",
+      "itemClass": "ranked",
+      "category": "ROADMAP / DEPENDENCY",
+      "layer": "systems",
+      "title": "Sequence the work",
+      "headline": "Order tasks by what unlocks the next proof",
+      "thesis": "A dependency-ordered roadmap shows the critical path and names one first task instead of presenting a flat backlog.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "A task can be real and still be the wrong next action. Dependencies expose blockers, parallel work, and the first safe move.",
+      "takeaway": "Name phases for outcomes, not categories.",
+      "verdict": {
+        "state": "USE",
+        "fit": "Multi-phase builds with blocked or parallel work",
+        "effort": "LOW",
+        "whyNow": "Sequence is where an audit becomes an operating plan.",
+        "risks": ["Flat lists hide the critical path."],
+        "nextStep": "Assign each task a phase and dependency set."
+      },
+      "stats": [
+        { "label": "PHASE 0", "value": "BLOCKERS", "emphasis": "red" },
+        { "label": "FIRST TASK", "value": "ONE" }
+      ],
+      "highlights": [
+        { "title": "Outcome names", "body": "Use names such as Local build runs green." },
+        { "title": "Independent proof", "body": "Split work until each task has a clear acceptance test." }
+      ],
+      "sources": [
+        { "label": "Public skill", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }
+      ],
+      "tags": ["dependencies", "critical-path"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Do the first unblocked task" },
+        { "id": "mechanics", "type": "mechanics", "label": "MECHANICS", "title": "Make progress visible", "body": "Each task carries a done-when statement, dependency list, effort, risk, and confidence. That makes handoff and review possible without guesswork." }
+      ]
+    },
+    {
+      "id": "r-05",
+      "rankLabel": "05",
+      "itemClass": "ranked",
+      "category": "EXECUTION / VERIFICATION",
+      "layer": "teams",
+      "title": "Execute against proof",
+      "headline": "A written task is not complete until its acceptance condition passes",
+      "thesis": "Execute the smallest safe change, rerun the relevant check, and update the existing record with current evidence.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "Files can be written while the real route, build, deployment, or user behavior remains broken. Completion is an independent recheck of each condition.",
+      "takeaway": "Verify the outcome, not the activity.",
+      "verdict": {
+        "state": "USE",
+        "fit": "Projects where status often means attempted rather than proven",
+        "effort": "MEDIUM",
+        "whyNow": "The verification gate is what separates a roadmap from decoration.",
+        "risks": ["Command success can mask a failed user outcome."],
+        "nextStep": "Recheck every finish-line condition independently."
+      },
+      "stats": [
+        { "label": "GATE", "value": "INDEPENDENT", "emphasis": "red" },
+        { "label": "STATUS", "value": "EVIDENCE" }
+      ],
+      "highlights": [
+        { "title": "Smallest change", "body": "Avoid unrelated cleanup and scope expansion." },
+        { "title": "Fresh evidence", "body": "Update the task record with the current proof." }
+      ],
+      "sources": [
+        { "label": "Public skill", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }
+      ],
+      "tags": ["execution", "verification"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "proof", "type": "proof", "label": "PROOF", "title": "Recheck the finish line", "body": "Do not inherit completion from a task status. Re-run the check that the condition names, then record what passed and what remains.", "highlights": [{ "title": "Outcome first", "body": "The user-visible result is the load-bearing proof." }] },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Keep working until proof passes" }
+      ]
+    },
+    {
+      "id": "r-06",
+      "rankLabel": "06",
+      "itemClass": "ranked",
+      "category": "BOUNDARY / STOP RULE",
+      "layer": "neutral",
+      "title": "Stop honestly",
+      "headline": "A real blocker is a valid result when the evidence is clear",
+      "thesis": "Stop at missing access, approval, credentials, safety boundaries, or external systems instead of manufacturing certainty.",
+      "whyLabel": "WHY IT MATTERS",
+      "whyBody": "A clean unresolved report protects the next operator. It names the blocker, owner, clearing action, and cheapest unblocker without pretending the project is complete.",
+      "takeaway": "Unresolved with proof is better than complete without it.",
+      "verdict": {
+        "state": "USE",
+        "fit": "Any workflow with external approvals or production boundaries",
+        "effort": "LOW",
+        "whyNow": "Honest stopping keeps the finish line trustworthy.",
+        "risks": ["False completion pushes hidden work downstream."],
+        "nextStep": "Record the blocker and its clearing action."
+      },
+      "stats": [
+        { "label": "STOP AT", "value": "REAL BLOCKER", "emphasis": "red" },
+        { "label": "REPORT", "value": "HONESTLY" }
+      ],
+      "highlights": [
+        { "title": "Name the owner", "body": "Say who must clear the decision or access gap." },
+        { "title": "Preserve trust", "body": "Do not call an attempted action a verified outcome." }
+      ],
+      "sources": [
+        { "label": "Public skill", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }
+      ],
+      "tags": ["blockers", "honesty"],
+      "tabs": [
+        { "id": "summary", "type": "summary", "label": "SUMMARY" },
+        { "id": "decision", "type": "decision", "label": "DECISION", "title": "Stop at the boundary", "body": "When the next action needs approval, credentials, external access, or a production change, record the boundary and hand off the clearing action." },
+        { "id": "source", "type": "source", "label": "SOURCE", "title": "Inspect the public package", "body": "The public package contains the portable workflow, references, launch prompts, and an uploadable ZIP.", "links": [{ "label": "Open source", "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means", "domain": "github.com", "type": "github" }] }
+      ]
+    }
+  ],
+  "closing": {
+    "label": "NEXT",
+    "title": "Run one audit on a live project",
+    "body": [
+      "Name the project, finish-line source, and roadmap backend. Then let the evidence decide what remains.",
+      "The method is portable because it does not assume a private tracker, filesystem, account, or deployment target."
+    ],
+    "cta": {
+      "label": "Open the public skill",
+      "url": "https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means"
+    }
+  },
+  "seo": {
+    "title": "Done Means: make completion checkable",
+    "description": "An evidence-backed guide to defining, sequencing, executing, and verifying project completion."
+  }
+}

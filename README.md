@@ -30,6 +30,7 @@ Clone or download a skill folder and place it in the appropriate directory for y
 | [claude-md-forge](skills/claude-md-forge/) | Distill source material (docs, transcripts, codebases) into optimized CLAUDE.md / AGENTS.md files |
 | [claude-release-guide](skills/claude-release-guide/) | Convert source material about a Claude product release into a verified, teaching-grade implementation guide |
 | [deep-save](skills/deep-save/) | Extract long conversations into a knowledge MCP (e.g., Open Brain) with signal/noise triage and permanence scoring |
+| [done-means](skills/done-means/) | Turn project status into an evidence-backed finish line and dependency-ordered completion roadmap |
 | [gamma-claude-skill](skills/gamma-claude-skill/) | Optimize and produce content specifically for the Gamma.app presentation platform |
 | [github-repo-setup](skills/github-repo-setup/) | Universal GitHub repository setup — README, .gitignore, branch protection, CI scaffolding |
 | [gpt-5-6-relay](skills/gpt-5-6-relay/) | Route tasks to GPT-5.6 threads (Sol/Terra/Luna tiers) via API relay |

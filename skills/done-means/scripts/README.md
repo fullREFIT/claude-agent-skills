@@ -1,0 +1,1 @@
+This directory is reserved for deterministic validators or backend adapters. The public package currently uses documented project adapters and a local Markdown fallback, so no executable script is required.

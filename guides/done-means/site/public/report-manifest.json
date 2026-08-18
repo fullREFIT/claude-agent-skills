@@ -1,0 +1,12 @@
+{
+  "defaultSlug": "done-means-guide",
+  "reports": [
+    {
+      "slug": "done-means-guide",
+      "title": "Done Means: make completion checkable",
+      "description": "An evidence-backed guide to defining, sequencing, executing, and verifying project completion.",
+      "jsonPath": "/reports/done-means-guide.json",
+      "publicPath": "/report/done-means-guide"
+    }
+  ]
+}
