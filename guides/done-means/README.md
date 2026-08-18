@@ -1,5 +1,7 @@
 # Done Means guide
 
+**Live guide:** https://done-means-guide.vercel.app
+
 This is a generated presentation website built with Presentation Deck Builder v2.
 
 ## Contents
