@@ -2,12 +2,13 @@
 
 **Live guide:** https://done-means-guide.vercel.app
 
-This is a generated presentation website built with Presentation Deck Builder v2.
+This is a scrolling public landing page for the Done Means Agent Skill, built with the full/REFIT workbench landing-page pattern. The older report renderer is preserved under `deck-runtime/` as an implementation reference.
 
 ## Contents
 
-- `done-means-guide-report.json`: source report with the six guide sections
-- `site/`: isolated Vite and TypeScript renderer, including the production `dist/` output
+- `done-means-guide-report.json`: the original structured report content
+- `site/`: the live landing page source and Vite build
+- `deck-runtime/`: the earlier presentation renderer, retained for reference
 
 ## Local preview
 

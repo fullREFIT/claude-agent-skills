@@ -1,24 +1,15 @@
 {
-  "name": "presentation-done-means-guide",
-  "version": "2.0.0",
+  "name": "done-means-guide",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "validate": "tsx src/validate-report.ts content/reports/done-means-guide.json"
-  },
-  "dependencies": {
-    "zod": "^4.4.3"
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --check main.js"
   },
   "devDependencies": {
-    "@types/node": "^22.15.32",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vitest": "^3.2.4"
+    "vite": "^6.3.5"
   },
-  "description": "Carbon Forge presenter website for done-means-guide"
+  "description": "Done Means public skill landing page"
 }

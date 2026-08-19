@@ -1,17 +1,113 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A full/REFIT presentation website." />
-    <title>full/REFIT Presentation</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/app.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Done Means turns vague project status into a checkable finish line and evidence-backed roadmap." />
+  <meta name="theme-color" content="#121010" />
+  <meta property="og:title" content="Done Means | full/REFIT" />
+  <meta property="og:description" content="Define the finish line. Trace the work. Verify the result." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://done-means-guide.vercel.app" />
+  <title>Done Means | full/REFIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="module" src="/main.js"></script>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav" aria-label="Primary navigation">
+    <a class="wordmark" href="#top" aria-label="full REFIT Done Means">
+      <span>full</span><span class="slash">/</span><span>REFIT</span>
+      <span class="product-name">Done Means</span>
+    </a>
+    <nav class="nav-actions" aria-label="Page links">
+      <a href="#how-it-works">How it works</a>
+      <a href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means">GitHub</a>
+      <a class="button button-small" href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means" rel="noreferrer">Inspect skill</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="hero-label">OPEN-SOURCE AGENT SKILL · PUBLIC</p>
+        <h1>Make completion checkable.</h1>
+        <p class="hero-lede">Turn vague project status into a finish line an independent observer can verify, then derive only the work the evidence supports.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means">Inspect the skill</a>
+          <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-note">No private tracker. No credentials. No invented backlog.</p>
+      </div>
+      <div class="hero-stage" aria-label="Done Means workflow preview">
+        <div class="deck-shell hero-deck" data-preview>
+          <div class="deck-topline"><span data-preview-label>AUDIT MODE</span><span>DONE MEANS</span></div>
+          <div class="deck-body">
+            <p class="deck-label">FINISH LINE</p>
+            <div class="deck-brand-system" aria-label="Active workflow mode">
+              <span class="deck-brand-swatches" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span><b data-preview-type>OBSERVABLE CONDITIONS</b><em data-preview-tone>Evidence before backlog</em></span>
+            </div>
+            <h2 data-preview-headline>What must be true before we call this finished?</h2>
+            <div class="deck-rule"></div>
+            <div class="deck-result"><span>OUTPUT</span><strong data-preview-result>ROADMAP</strong></div>
+          </div>
+          <div class="deck-footer"><span>Evidence → action</span><span class="deck-progress"><i></i></span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip" aria-label="Done Means capabilities">
+      <span>3 finding types</span><span>Dependency ordered</span><span>Backend agnostic</span><span>Local fallback</span><span>MIT licensed</span>
+    </div>
+
+    <section class="problem-section">
+      <p>A status label is not evidence.</p>
+      <h2>Most project reviews confuse activity with completion. They produce a longer backlog instead of a sharper finish line.</h2>
+      <div class="problem-resolution"><strong>Done Means separates them.</strong><span>The finish line becomes explicit. Findings carry citations. Tasks are sequenced by dependency. Completion is rechecked independently.</span></div>
+    </section>
+
+    <section class="brand-workbench" id="workbench">
+      <div class="section-heading">
+        <div><p class="section-context">THE WORKBENCH</p><h2>Change the question, not the evidence.</h2></div>
+        <p>Select a workflow mode. The preview shows what the skill makes visible at that point in the work.</p>
+      </div>
+      <div class="workbench-layout">
+        <div class="brand-selector" role="tablist" aria-label="Done Means workflow modes">
+          <button class="brand-option is-active brand-carbon" role="tab" aria-selected="true" aria-controls="workflow-preview" data-mode="audit" tabindex="0"><span class="brand-index">01</span><span class="brand-option-copy"><strong>Audit</strong><small>Define the finish line</small></span><span class="brand-guideline" aria-hidden="true"><span class="brand-swatches"><i></i><i></i><i></i><i></i></span><b>CONDITIONS / PROOF</b><em>OBSERVABLE OUTCOMES</em></span><i class="brand-radio" aria-hidden="true"></i></button>
+          <button class="brand-option brand-tab" role="tab" aria-selected="false" aria-controls="workflow-preview" data-mode="sequence" tabindex="-1"><span class="brand-index">02</span><span class="brand-option-copy"><strong>Sequence</strong><small>Trace the work to it</small></span><span class="brand-guideline" aria-hidden="true"><span class="brand-swatches"><i></i><i></i><i></i><i></i></span><b>BROKEN / MISSING</b><em>DEPENDENCY ORDER</em></span><i class="brand-radio" aria-hidden="true"></i></button>
+          <button class="brand-option brand-executive" role="tab" aria-selected="false" aria-controls="workflow-preview" data-mode="verify" tabindex="-1"><span class="brand-index">03</span><span class="brand-option-copy"><strong>Verify</strong><small>Prove the result</small></span><span class="brand-guideline" aria-hidden="true"><span class="brand-swatches"><i></i><i></i><i></i><i></i></span><b>DONE / BLOCKED</b><em>INDEPENDENT CHECK</em></span><i class="brand-radio" aria-hidden="true"></i></button>
+          <div class="custom-option"><span class="brand-index">04</span><div><strong>Bring your own backend</strong><small>Use the tracker your project already names, or write an explicit local Markdown roadmap.</small></div></div>
+        </div>
+        <div class="workbench-preview" id="workflow-preview" role="tabpanel" aria-live="polite" aria-label="Selected workflow mode preview">
+          <div class="deck-shell workbench-deck" data-preview>
+            <div class="deck-topline"><span data-preview-label>AUDIT MODE</span><span>DONE MEANS</span></div>
+            <div class="deck-body"><p class="deck-label">WHY IT MATTERS</p><div class="deck-brand-system"><span class="deck-brand-swatches" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><b data-preview-type>OBSERVABLE CONDITIONS</b><em data-preview-tone>Evidence before backlog</em></span></div><h3 data-preview-headline>What must be true before we call this finished?</h3><p data-preview-copy>Define three to six conditions an independent observer can check without asking for interpretation.</p><div class="deck-signal-row"><span><small>STATUS</small><strong data-preview-status>READY</strong></span><span><small>RISK</small><strong data-preview-risk>VAGUE</strong></span></div></div>
+            <div class="deck-footer"><span data-preview-wordmark>DONE MEANS</span><span class="deck-progress"><i></i></span></div>
+          </div>
+          <p class="preview-description" data-preview-description>Start with the condition, not the backlog.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mechanism" id="how-it-works"><div class="mechanism-intro"><h2>The method stays narrow. The evidence gets stronger.</h2><p>Done Means follows a fixed sequence so a project review cannot silently become generic cleanup or a second task system.</p></div><ol class="mechanism-list"><li><span>1</span><div><strong>Read the live project</strong><p>Inspect instructions, manifests, configuration, source, tests, and current Git state.</p></div></li><li><span>2</span><div><strong>Define DONE MEANS</strong><p>Write three to six independently verifiable conditions before deriving work.</p></div></li><li><span>3</span><div><strong>Classify the gap</strong><p>Use only BROKEN, MISSING, or REQUIRED findings with a real citation.</p></div></li><li><span>4</span><div><strong>Sequence the work</strong><p>Split tasks until they fail independently, then order them by dependency.</p></div></li><li><span>5</span><div><strong>Verify the outcome</strong><p>Recheck every condition independently. Stop honestly at a real blocker.</p></div></li></ol></section>
+
+    <section class="specification"><div class="section-heading inverse"><div><p class="section-context">WHAT SHIPS</p><h2>A skill you can inspect.</h2></div><p>The public repository includes the reusable procedure, references, launch prompts, and an uploadable package.</p></div><dl class="spec-table"><div><dt>Agent skill</dt><dd>SKILL.md with narrow triggers and a progressive-disclosure workflow</dd><dd class="spec-status">INCLUDED</dd></div><div><dt>Evidence contract</dt><dd>Finish-line conditions, finding taxonomy, task fields, and verification gate</dd><dd class="spec-status">INCLUDED</dd></div><div><dt>Backend boundary</dt><dd>Use a project-named tracker or an explicit local Markdown fallback</dd><dd class="spec-status">PLUGGABLE</dd></div><div><dt>Safety</dt><dd>No private account IDs, credentials, client fixtures, or personal filesystem assumptions</dd><dd class="spec-status">PUBLIC</dd></div><div><dt>License</dt><dd>Portable Agent Skills package for compatible agent platforms</dd><dd class="spec-status">MIT</dd></div></dl></section>
+
+    <section class="fit-section"><div class="fit-column"><h2>Built for</h2><ul><li>Projects with vague or competing definitions of done</li><li>Agent handoffs that need current evidence</li><li>Builds with explicit launch or completion criteria</li><li>Teams that want a roadmap shorter than the truth</li></ul></div><div class="fit-column fit-column-dark"><h2>Not built for</h2><ul><li>Inventing a backlog from general best practice</li><li>Replacing a tracker without the project’s permission</li><li>Calling a file write or command exit proof</li><li>Hiding access, approval, or production blockers</li></ul></div></section>
+
+    <section class="guide-section" id="guide"><div class="guide-copy"><h2>From ambiguous status to a verified finish line.</h2><p>The public skill includes the audit protocol, execution gate, short launch prompts, and a local Markdown fallback for projects without a named tracker.</p><a class="button" href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means">Read the complete skill</a></div><div class="command-sequence" aria-label="Done Means workflow"><div><span>01</span><code>Read the live project</code></div><div><span>02</span><code>Define DONE MEANS</code></div><div><span>03</span><code>Classify evidence</code></div><div><span>04</span><code>Sequence dependencies</code></div><div><span>05</span><code>Recheck every condition</code></div></div></section>
+
+    <section class="security-band"><h2>Public by design. Private by default.</h2><p>The package contains no credentials, private trackers, customer fixtures, or dependency on a personal filesystem. Your project evidence stays in the backend or file path you explicitly choose.</p><a class="text-link light security-link" href="https://github.com/fullREFIT/claude-agent-skills/blob/main/skills/done-means/SKILL.md">Read the public skill <span aria-hidden="true">↗</span></a></section>
+
+    <section class="faq-section"><h2>Questions worth answering.</h2><div class="faq-list"><details><summary>Does it require Airtable?</summary><p>No. The public package does not assume Airtable or any fixed account. Use the project’s named backend or request the local Markdown fallback.</p></details><details><summary>Does it create generic tasks?</summary><p>No. Tasks must trace to a finish-line condition and carry evidence classified as BROKEN, MISSING, or REQUIRED.</p></details><details><summary>Can it execute the roadmap?</summary><p>Yes, when execution is explicitly requested. It performs safe local work, verifies outcomes, and stops at approval, credential, access, safety, or external-system boundaries.</p></details><details><summary>What counts as evidence?</summary><p>A path and line, a command and observed error, or an explicit absence. A prior report or successful file write is not proof by itself.</p></details><details><summary>Can a project already be complete?</summary><p>Yes. If every finish-line condition passes current independent checks, the correct result is complete with no manufactured backlog.</p></details></div></section>
+
+    <section class="final-cta"><p>Define the finish line. Keep the evidence. Ship with proof.</p><h2>The public skill is ready to inspect and adapt.</h2><div class="hero-actions"><a class="button" href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means">Open Done Means on GitHub</a><a class="text-link light" href="https://done-means-guide.vercel.app">Reload the live guide <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><p>Build the roadmap around the finish line, not the noise.</p><div><span>full/REFIT · 2026</span><a href="https://github.com/fullREFIT/claude-agent-skills/tree/main/skills/done-means">GitHub</a><a href="https://github.com/fullREFIT/claude-agent-skills/blob/main/skills/done-means/README.md">MIT License</a></div></footer>
+</body>
 </html>
